@@ -1,67 +1,70 @@
-.container{
-    padding: 4em;
-    margin: auto;
-    background-color: #FFFF;
-    display: grid;
-    grid-template-columns: auto 243px auto 243px auto;
-    grid-template-rows: min-content 30px min-content ;
-    width: 60%;
+.container {
+  padding: 4em;
+  margin: auto;
+  background-color: #FFFF;
+  display: grid;
+  grid-template-columns: auto 240px 60px 240px auto;
+  grid-template-rows: min-content 30px min-content;
+  width: 60%;
 
 }
 
-.buttons{
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    margin: auto;
-    background-color: #E5E5E5;
-    border-radius: 6px;
-    border: 0.1rem solid #E5E5E5;
-    box-sizing: border-box;
-    width:249px;
-    height: 36px;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
+.buttons {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin: auto;
+  background-color: #E5E5E5;
+  border-radius: 6px;
+  border: 0.1rem solid #E5E5E5;
+  box-sizing: border-box;
+  width: 249px;
+  height: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    button{
-      font-size: 14px;
-      background-color: #E5E5E5;
-      border:none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    button:active{
+  button {
+    font-size: 14px;
+    background-color: #E5E5E5;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:active {
       background-color: #FFFF;
       border-radius: 6px;
     }
   }
-.img-btn{
-padding-right: 10px;
 }
-  .runtime{
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
 
-  .constructor{
-    grid-column-start: 2;
-    grid-column-end: 3;
-  }
-  .label-right{
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    margin: auto
-  }
+.img-btn {
+  padding-right: 10px;
+}
 
-  .label-left{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    margin: auto
-  }
+.runtime {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.constructor {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.label-right {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin: auto
+}
+
+.label-left {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin: auto
+}

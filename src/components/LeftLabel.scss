@@ -27,20 +27,19 @@
 
 .input-label {
     @extend %block-shadow;
-    //padding: 4px;
-    //grid-template-columns: 1fr
 }
 
-.calculator-screen {
-    width: 100%;
-    font-size: 36px;
+.calculator-screen{
     font-weight: 800;
     border: none;
     background-color: #F3F4F6;
     text-align: right;
-    padding-right: 4px;
-    padding-left: 4px;
+    margin: 4px;
     outline: none;
+    font-size: 36px;
+    max-width: 220px;
+    padding-right: 8px;
+    padding-left: 4px;
 }
 
 .btn {
