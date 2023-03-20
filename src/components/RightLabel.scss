@@ -1,0 +1,36 @@
+.empty-maket{ 
+    border-radius: 6px;
+    margin: auto;
+    text-align: center;
+    height:448px;
+    width: 243px;
+    justify-content: center;
+    position: relative;
+
+    border: dashed #C4C4C4;
+    
+
+}
+
+.empty-maket-content{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    p{
+        margin: 0;
+    }
+}
+
+.phrase-move{
+    font-size: 14px;
+    color: #5D5FEF;
+    font-weight: 500;
+}
+.phrase-move-any{
+    font-size: 12px;
+    color:#6B7280;
+    font-weight: 400;
+}

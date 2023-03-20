@@ -1,0 +1,85 @@
+%block-shadow {
+    width: 240px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background-color: #FFFF;
+    position: relative;
+    display: grid;
+    margin: 6px;
+}
+
+%btn-style {
+    border: 1px solid #E2E3E5;
+    border-radius: 6px;
+    background-color: #FFFF;
+    font-size: 14px;
+    height: 48px;
+    margin: 4px;
+    &:hover {
+        border: 2px solid #5D5FEF;
+        cursor: pointer;
+    }
+}
+
+.calculate-maket {
+    display: grid;
+}
+
+.input-label {
+    @extend %block-shadow;
+    //padding: 4px;
+    //grid-template-columns: 1fr
+}
+
+.calculator-screen {
+    width: 100%;
+    font-size: 36px;
+    font-weight: 800;
+    border: none;
+    background-color: #F3F4F6;
+    text-align: right;
+    padding-right: 4px;
+    padding-left: 4px;
+    outline: none;
+}
+
+.btn {
+    @extend %btn-style;
+}
+
+.null {
+    @extend %btn-style;
+    grid-column-start: 1;
+    grid-column-end: 3
+}
+
+.sign-equal{
+    border: 1px solid #5D5FEF;
+    border-radius: 6px;
+    background-color:#5D5FEF;
+    color: #FFFF;
+    font-size: 14px;
+    height: 64px;
+    margin: 4px;
+    &:hover {
+        border: 2px solid #272ad3;
+        cursor: pointer;
+    }
+}
+
+
+.signs {
+    @extend %block-shadow;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.numbers {
+    @extend %block-shadow;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.equal{
+    @extend %block-shadow;
+}
