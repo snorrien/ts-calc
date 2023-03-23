@@ -1,4 +1,4 @@
-.empty-maket{ 
+.maketClass{ 
     border-radius: 6px;
     margin: auto;
     text-align: center;
@@ -6,11 +6,12 @@
     width: 243px;
     justify-content: center;
     position: relative;
-
     border: dashed #C4C4C4;
-    
-
 }
+
+.activeMaket:hover{
+    background-color: #ade6ee;
+    }
 
 .empty-maket-content{
     margin: 0;
@@ -34,3 +35,4 @@
     color:#6B7280;
     font-weight: 400;
 }
+

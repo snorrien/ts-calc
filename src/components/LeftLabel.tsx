@@ -1,18 +1,37 @@
+import React, { useEffect, useState } from "react";
+import DragAndDrop from "./DragAndDrop";
 import "./LeftLabel.scss";
 
-const LeftLabel = () => {
+export interface Props {
+    activeDraggble: boolean;
+}
+
+const LeftLabel: React.FC<Props> = (props) => {
+
+    useEffect(() => {
+        window.addEventListener('dragstart', (event) => {
+            DragAndDrop(event);
+        });
+    });
+
+
     return (
         <div className="calculate-maket">
-            <div className="input-label">
-                <input type="text" className="calculator-screen" value="0"></input>
+            <div
+                className="input-label"
+                draggable={props.activeDraggble}>
+                <input type="text" className="calculator-screen"></input>
             </div>
-            <div className="signs">
+            
+            <div className="signs"
+            draggable={props.activeDraggble}>
                 <button className="btn">/</button>
                 <button className="btn">x</button>
                 <button className="btn">-</button>
                 <button className="btn">+</button>
             </div>
-            <div className="numbers">
+            <div className="numbers"
+            draggable={props.activeDraggble}>
                 <button className="btn">7</button>
                 <button className="btn">8</button>
                 <button className="btn">9</button>
@@ -28,7 +47,8 @@ const LeftLabel = () => {
                 <button className="null">0</button>
                 <button className="btn">,</button>
             </div>
-            <div className="equal">
+            <div className="equal"
+            draggable={props.activeDraggble}>
                 <button className="sign-equal">=</button>
             </div>
 
