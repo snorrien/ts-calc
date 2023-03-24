@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import DragAndDrop from "./DragAndDrop";
 import "./LeftLabel.scss";
 
 export interface Props {
@@ -9,21 +8,24 @@ export interface Props {
 const LeftLabel: React.FC<Props> = (props) => {
 
     useEffect(() => {
-        window.addEventListener('dragstart', (event) => {
-            DragAndDrop(event);
+        window.addEventListener('dragstart', (event: any) => {
+            event.dataTransfer.setData("text/plain", event.target.id);
+
+            event.target.style.opacity = "0.5"; 
         });
     });
 
 
     return (
         <div className="calculate-maket">
-            <div
-                className="input-label"
+            <div className="input-label"
+                id="input-labe"
                 draggable={props.activeDraggble}>
                 <input type="text" className="calculator-screen"></input>
             </div>
             
             <div className="signs"
+                 id="signs"
             draggable={props.activeDraggble}>
                 <button className="btn">/</button>
                 <button className="btn">x</button>
@@ -31,6 +33,7 @@ const LeftLabel: React.FC<Props> = (props) => {
                 <button className="btn">+</button>
             </div>
             <div className="numbers"
+                id="numbers"
             draggable={props.activeDraggble}>
                 <button className="btn">7</button>
                 <button className="btn">8</button>
@@ -48,10 +51,10 @@ const LeftLabel: React.FC<Props> = (props) => {
                 <button className="btn">,</button>
             </div>
             <div className="equal"
+                id="equal"
             draggable={props.activeDraggble}>
-                <button className="sign-equal">=</button>
+                <button className="sign-equal" >=</button>
             </div>
-
         </div>
     )
 }

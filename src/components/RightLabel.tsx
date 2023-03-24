@@ -11,24 +11,40 @@ const RightLabel: React.FC<Props> = (props) => {
     
     useEffect(() => {
         const element = document.getElementById('maket');
-        if (element !=null)
+        if (!element) {
+            return;
+        }
+        element.addEventListener('dragover', (event) => {
+            event.preventDefault();
+        });
+
         element.addEventListener('dragenter', (event) => {
-            console.log('enter')
+            console.log('dragenter')
             setMaketClass("maketClass activeMaket");
+        });
+
+        element.addEventListener('dragleave', (event) => {
+            console.log('dragleave')
+            setMaketClass("maketClass");
+        });
+
+        element.addEventListener('drop', (event: any) => {
+            event.preventDefault();
+            const sourceId = event.dataTransfer.getData("text/plain");
+            const component = document.getElementById(sourceId);
+
+            
+            setMaketClass("maketClass");
+            if (component) {
+                element.append(component);
+                component.style.opacity = "1"; // set opacity to 100%
+            }
         });
     });
 
-    const dragOver = function (event: React.DragEvent<HTMLDivElement>) {
-        event.preventDefault();
-    }
-    
-    const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-        console.log('element dropped')
-    }
-
     return (
         <div id="maket" className={maketClass}
-            onDrop={handleDrop}>
+            >
             <div className="empty-maket-content" >
                 <img src="/imgs/img-add.svg"></img>
                 <p className="phrase-move">Перетащите сюда</p>
