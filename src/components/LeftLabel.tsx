@@ -1,59 +1,63 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./LeftLabel.scss";
+import { ActionType } from "../types/index";
+import { useAppDispatch, useAppSelector } from "../hooks";
+import { add, equal, multiplication, separation, subtraction, update } from "../features/calculator/calculatorSlice";
 
 export interface Props {
     activeDraggble: boolean;
 }
 
 const LeftLabel: React.FC<Props> = (props) => {
-
     useEffect(() => {
         window.addEventListener('dragstart', (event: any) => {
             event.dataTransfer.setData("text/plain", event.target.id);
 
-            event.target.style.opacity = "0.5"; 
+            event.target.style.opacity = "0.4"; 
         });
     });
 
+    const dispatch = useAppDispatch()
+    const display = useAppSelector((state) =>  state.calculator.display);
 
     return (
         <div className="calculate-maket">
             <div className="input-label"
-                id="input-labe"
+                id="input-label"
                 draggable={props.activeDraggble}>
-                <input type="text" className="calculator-screen"></input>
+                <div className="calculator-screen" id="input">{display}</div>
             </div>
             
             <div className="signs"
                  id="signs"
             draggable={props.activeDraggble}>
-                <button className="btn">/</button>
-                <button className="btn">x</button>
-                <button className="btn">-</button>
-                <button className="btn">+</button>
+                <button className="btn" onClick={() => dispatch(separation())}>/</button>
+                <button className="btn" onClick={() => dispatch(multiplication())}>x</button>
+                <button className="btn" onClick={() => dispatch(subtraction())}>-</button>
+                <button className="btn" onClick={() => dispatch(add())}>+</button>
             </div>
             <div className="numbers"
                 id="numbers"
             draggable={props.activeDraggble}>
-                <button className="btn">7</button>
-                <button className="btn">8</button>
-                <button className="btn">9</button>
+                <button className="btn" onClick={() => dispatch(update("7"))}>7</button>
+                <button className="btn" onClick={() => dispatch(update("8"))}>8</button>
+                <button className="btn" onClick={() => dispatch(update("9"))}>9</button>
 
-                <button className="btn">4</button>
-                <button className="btn">5</button>
-                <button className="btn">6</button>
+                <button className="btn" onClick={() => dispatch(update("4"))}>4</button>
+                <button className="btn" onClick={() => dispatch(update("5"))}>5</button>
+                <button className="btn" onClick={() => dispatch(update("6"))}>6</button>
 
-                <button className="btn">1</button>
-                <button className="btn">2</button>
-                <button className="btn">3</button>
+                <button className="btn" onClick={() => dispatch(update("1"))}>1</button>
+                <button className="btn" onClick={() => dispatch(update("2"))}>2</button>
+                <button className="btn" onClick={() => dispatch(update("3"))}>3</button>
 
-                <button className="null">0</button>
-                <button className="btn">,</button>
+                <button className="null" onClick={() => dispatch(update("0"))}>0</button>
+                <button className="btn" onClick={() => dispatch(update("5"))}>,</button>
             </div>
             <div className="equal"
                 id="equal"
             draggable={props.activeDraggble}>
-                <button className="sign-equal" >=</button>
+                <button className="sign-equal" onClick={() => dispatch(equal())} >=</button>
             </div>
         </div>
     )

@@ -7,15 +7,18 @@
     display: grid;
     margin-top: 6px;
     margin-bottom: 6px;
+
 }
 
 %btn-style {
     border: 1px solid #E2E3E5;
     border-radius: 6px;
     background-color: #FFFF;
+
     font-size: 14px;
     height: 48px;
     margin: 4px;
+
     &:hover {
         border: 2px solid #5D5FEF;
         cursor: pointer;
@@ -24,13 +27,22 @@
 
 .calculate-maket {
     display: grid;
+    grid-template-rows: 68px 68px 242px 84px;
+
+
 }
 
 .input-label {
     @extend %block-shadow;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    .calculator-screen {
+        height: 48px;
+    }
 }
 
-.calculator-screen{
+.calculator-screen {
     font-weight: 800;
     border: none;
     background-color: #F3F4F6;
@@ -53,14 +65,15 @@
     grid-column-end: 3
 }
 
-.sign-equal{
+.sign-equal {
     border: 1px solid #5D5FEF;
     border-radius: 6px;
-    background-color:#5D5FEF;
+    background-color: #5D5FEF;
     color: #FFFF;
     font-size: 14px;
     height: 64px;
     margin: 4px;
+
     &:hover {
         border: 2px solid #272ad3;
         cursor: pointer;
@@ -71,20 +84,25 @@
 .signs {
     @extend %block-shadow;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .numbers {
     @extend %block-shadow;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-row-start: 3;
+    grid-row-end: 4;
 }
 
-.equal{
+.equal {
     @extend %block-shadow;
+    grid-row-start: 4;
+    grid-row-end: span 5;
 }
 
-.hovered{
+.hovered {
     background-color: #F0F9FF;
 }
 

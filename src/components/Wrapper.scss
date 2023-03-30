@@ -32,7 +32,7 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.passive{
+.passive {
   @extend %special;
   background-color: #E5E5E5;
 
@@ -42,38 +42,39 @@
   }
 }
 
-.active{
+.active {
   @extend %special;
   background-color: #FFFF;
   border-radius: 6px;
 }
 
-  .img-btn {
-    padding-right: 10px;
-  }
+.img-btn {
+  padding-right: 10px;
+}
 
-  .runtime {
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
+.runtime {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
 
-  .constructor {
-    grid-column-start: 2;
-    grid-column-end: 3;
-  }
+.constructor {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
 
-  .label-right {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    margin: auto
-  }
+.label-right {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin: auto
+}
 
-  .label-left {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    margin: auto
-  }
+.label-left {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin: auto
+}
+

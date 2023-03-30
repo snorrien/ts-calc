@@ -1,5 +1,6 @@
 import LeftLabel from "./LeftLabel";
 import RightLabel from "./RightLabel";
+import TransparentLeftLabel from "./TransparentLeftLabel";
 import "./Wrapper.scss";
 import { useState } from "react";
 
@@ -34,6 +35,7 @@ const Wrapper = () => {
                     Constructor</button>
             </div>
             <div className="label-left">
+<TransparentLeftLabel/>
                 <LeftLabel activeDraggble={activeDraggble} />
             </div>
             <div className="label-right">

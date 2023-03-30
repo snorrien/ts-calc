@@ -1,0 +1,76 @@
+%transparent-btn-style {
+    border: 1px solid #E2E3E5;
+    border-radius: 6px;
+    background-color: #FFFF;
+    opacity: 0.5;
+    font-size: 14px;
+    height: 48px;
+    margin: 4px;
+}
+
+%block-wrapper {
+    width: 240px;
+    border-radius: 4px;
+    background-color: #FFFF;
+    position: relative;
+    display: grid;
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+}
+
+.calculate-maket-transparent {
+    display: grid;
+    z-index: -1;
+}
+
+.calculator-screen-t {
+    height: 48px;
+}
+
+.calculator-screen-t {
+    font-weight: 800;
+    border: none;
+    background-color: #F3F4F6;
+    text-align: right;
+    margin: 4px;
+    outline: none;
+    font-size: 36px;
+    max-width: 220px;
+    padding-right: 8px;
+    padding-left: 4px;
+}
+
+.btn-t {
+    @extend %transparent-btn-style ;
+}
+
+.null-t {
+    @extend %transparent-btn-style ;
+    grid-column-start: 1;
+    grid-column-end: 3
+}
+
+.sign-equal-t {
+    border: 1px solid #5D5FEF;
+    border-radius: 6px;
+    background-color: #5D5FEF;
+    color: #FFFF;
+    font-size: 14px;
+    height: 64px;
+    margin: 4px;
+    opacity: 0.5;
+}
+
+.signs-t{
+@extend %block-wrapper;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.numbers-t{
+    @extend %block-wrapper;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.equal-t{
+    @extend %block-wrapper;
+}
