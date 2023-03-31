@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./LeftLabel.scss";
-import { ActionType } from "../types/index";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { add, equal, multiplication, separation, subtraction, update } from "../features/calculator/calculatorSlice";
 

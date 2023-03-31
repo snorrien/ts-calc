@@ -35,11 +35,16 @@ const Wrapper = () => {
                     Constructor</button>
             </div>
             <div className="label-left">
-<TransparentLeftLabel/>
-                <LeftLabel activeDraggble={activeDraggble} />
+                <div className="Transparent">
+                    <TransparentLeftLabel />
+                    <div className="Original ">
+                        <LeftLabel activeDraggble={activeDraggble} />
+                    </div>
+                </div>
+
             </div>
             <div className="label-right">
-                <RightLabel activeDraggble={activeDraggble}/>
+                <RightLabel activeDraggble={activeDraggble} />
             </div>
         </div >
     )

@@ -75,6 +75,18 @@
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
-  margin: auto
+  margin: auto;
+  display: flex;
+
 }
 
+.Transparent{
+	z-index: 1;
+  margin-top: 7px;
+}
+
+.Original{
+  z-index: 2;
+  margin-top: -460px;
+}
+ 

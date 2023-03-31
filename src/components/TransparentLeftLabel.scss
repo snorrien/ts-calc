@@ -2,10 +2,10 @@
     border: 1px solid #E2E3E5;
     border-radius: 6px;
     background-color: #FFFF;
-    opacity: 0.5;
+    opacity: 0.4;
     font-size: 14px;
     height: 48px;
-    margin: 4px;
+    margin:4px;
 }
 
 %block-wrapper {
@@ -33,7 +33,9 @@
     border: none;
     background-color: #F3F4F6;
     text-align: right;
-    margin: 4px;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 9px;
     outline: none;
     font-size: 36px;
     max-width: 220px;
@@ -43,6 +45,7 @@
 
 .btn-t {
     @extend %transparent-btn-style ;
+   
 }
 
 .null-t {
@@ -59,7 +62,7 @@
     font-size: 14px;
     height: 64px;
     margin: 4px;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .signs-t{
@@ -70,7 +73,9 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
     @extend %block-wrapper;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin-top: 10px;
 }
 .equal-t{
     @extend %block-wrapper;
+    margin-top: 8px;
 }

@@ -43,7 +43,7 @@ const RightLabel: React.FC<Props> = (props) => {
     });
 
     return (
-        <div id="maket" className={maketClass}
+        <div  id="maket" className={maketClass}
             >
             <div className="empty-maket-content" >
                 <img src="/imgs/img-add.svg"></img>
