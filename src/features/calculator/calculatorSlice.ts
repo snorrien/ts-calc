@@ -14,13 +14,17 @@ const initialState: CalculatorState = {
     history: [],
 }
 
+
+
+
 export const calculatorSlice = createSlice({
     name: 'calculator',
     initialState,
     reducers: {
         add: state => {
-            state.history.push("+");
+            
             state.prevOperation = "operator";
+            console.log(state.history)
         },
         subtraction: state => {
             state.history.push("-");
@@ -37,11 +41,17 @@ export const calculatorSlice = createSlice({
         update: (state, action: PayloadAction<string>) => {
             if (state.prevOperation === "operator") {
                 state.history.push(state.display);
+
                 state.display = action.payload
+               
             } else {
                 state.display += action.payload
+                
             }
             state.prevOperation = "num";
+            state.history.push(state.display)
+            state.display = action.payload
+
         },
         equal: state => {
             let num: number = parseInt(state.history[0])
