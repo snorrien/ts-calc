@@ -7,6 +7,7 @@ export interface Props {
 
 const RightLabel: React.FC<Props> = (props) => {
 
+    const[emptyMaketContent, setEmptyMaketContent] = useState("emptyMaketContent")
     const [maketClass, setMaketClass] = useState("maketClass")
     
     useEffect(() => {
@@ -32,6 +33,7 @@ const RightLabel: React.FC<Props> = (props) => {
             event.preventDefault();
             const sourceId = event.dataTransfer.getData("text/plain");
             const component = document.getElementById(sourceId);
+            setEmptyMaketContent("emptyMaketContent hide");
 
             
             setMaketClass("maketClass");
@@ -45,7 +47,7 @@ const RightLabel: React.FC<Props> = (props) => {
     return (
         <div  id="maket" className={maketClass}
             >
-            <div className="empty-maket-content" >
+            <div className={emptyMaketContent} >
                 <img src="/imgs/img-add.svg"></img>
                 <p className="phrase-move">Перетащите сюда</p>
                 <p className="phrase-move-any">любой элемент из левой панели</p>

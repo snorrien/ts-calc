@@ -24,7 +24,7 @@ const LeftLabel: React.FC<Props> = (props) => {
             <div className="input-label"
                 id="input-label"
                 draggable={props.activeDraggble}>
-                <div className="calculator-screen" id="input">{display}</div>
+                <div className="calculator-screen" id="input" >{display}</div>
             </div>
             
             <div className="signs"

@@ -3,17 +3,16 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 interface CalculatorState {
     value: number,
     display: string,
-    prevOperation: "num" | "operator" | "",
+    prevOperation: "num" | "operator",
     history: string[],
 }
 
 const initialState: CalculatorState = {
     value: 0,
     display: "",
-    prevOperation: "",
+    prevOperation: "operator",
     history: [],
 }
-
 
 
 
@@ -22,38 +21,33 @@ export const calculatorSlice = createSlice({
     initialState,
     reducers: {
         add: state => {
-            
+            state.history = [...state.history, state.display, "+"];
             state.prevOperation = "operator";
-            console.log(state.history)
         },
         subtraction: state => {
-            state.history.push("-");
+            state.history = [...state.history, state.display, "-"];
             state.prevOperation = "operator";
         },
         separation: state => {
-            state.history.push("/");
+            state.history = [...state.history, state.display, "/"];
             state.prevOperation = "operator";
         },
         multiplication: state => {
-            state.history.push("*");
+
+            state.history = [...state.history, state.display, "*"];
             state.prevOperation = "operator";
         },
         update: (state, action: PayloadAction<string>) => {
             if (state.prevOperation === "operator") {
-                state.history.push(state.display);
+                state.display = action.payload.slice(0,10);
 
-                state.display = action.payload
-               
-            } else {
-                state.display += action.payload
-                
+            } else if (state.display.length < 10){
+                state.display += action.payload;
             }
             state.prevOperation = "num";
-            state.history.push(state.display)
-            state.display = action.payload
-
         },
         equal: state => {
+            state.history = [...state.history, state.display];
             let num: number = parseInt(state.history[0])
             for (let i = 1; i < state.history.length; i += 2) {
 
@@ -76,6 +70,15 @@ export const calculatorSlice = createSlice({
                         throw new Error(`Invalid operator: ${operator}`);
                 }
             }
+            const rounded = Math.round(num * 100) / 100;
+            let result = rounded % 1 === 0 ? rounded.toFixed(0) : rounded.toFixed(2);
+            
+
+            state.display = result.toString();
+            state.history = [];
+            state.prevOperation = "num";
+            console.log(state.history);
+
         }
     }
 })
