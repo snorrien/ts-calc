@@ -19,9 +19,13 @@
 
 }
 
-.calculate-maket-transparent {
+.transparentCalc {
     display: grid;
     z-index: -1;
+}
+
+.hide{
+    opacity: 0;
 }
 
 .calculator-screen-t {

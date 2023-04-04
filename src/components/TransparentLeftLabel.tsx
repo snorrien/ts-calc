@@ -1,8 +1,22 @@
+import { useState } from "react";
 import "./TransparentLeftLabel.scss";
 
-const TransparentLeftLabel = () => {
+export interface Props {
+    activeDraggble: boolean;
+}
+
+const TransparentLeftLabel: React.FC<Props> = (props) => {
+
+    const[transparentCalc, setTransparentCalc] = useState("transparentCalc")
+
+    const ActiveTransparentLabel = () => {
+        if (!props.activeDraggble) {
+            setTransparentCalc("transparentCalc hide")
+        }
+    }
+
     return (
-        <div className="calculate-maket-transparent">
+        <div className={transparentCalc}>
             <div className="input-label-t">
                 <div className="calculator-screen-t" ></div>
             </div>

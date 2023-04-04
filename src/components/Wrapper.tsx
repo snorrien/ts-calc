@@ -37,7 +37,7 @@ const Wrapper = () => {
             <div className="label-left">
                 <div className="Transparent">
                     <TransparentLeftLabel activeDraggble={activeDraggble}/>
-                    <div className="Original ">
+                    <div className="Original">
                         <LeftLabel activeDraggble={activeDraggble} />
                     </div>
                 </div>
