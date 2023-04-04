@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./TransparentLeftLabel.scss";
 
 export interface Props {
@@ -7,13 +7,16 @@ export interface Props {
 
 const TransparentLeftLabel: React.FC<Props> = (props) => {
 
-    const[transparentCalc, setTransparentCalc] = useState("transparentCalc")
-
-    const ActiveTransparentLabel = () => {
+    const [transparentCalc, setTransparentCalc] = useState("transparentCalc")
+    
+    useEffect(() => {
         if (!props.activeDraggble) {
             setTransparentCalc("transparentCalc hide")
+        } else {
+            setTransparentCalc("transparentCalc")
         }
-    }
+    }, [props.activeDraggble]);
+   
 
     return (
         <div className={transparentCalc}>
