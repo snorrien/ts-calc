@@ -48,11 +48,11 @@ export const calculatorSlice = createSlice({
         },
         equal: state => {
             state.history = [...state.history, state.display];
-            let num: number = parseInt(state.history[0])
+            let num = parseFloat(state.history[0])
             for (let i = 1; i < state.history.length; i += 2) {
 
                 const operator = state.history[i];
-                const operand = parseInt(state.history[i + 1]);
+                const operand = parseFloat(state.history[i + 1]);
                 switch (operator) {
                     case "+":
                         num += operand;
